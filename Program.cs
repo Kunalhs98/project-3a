@@ -13,9 +13,35 @@ namespace project_3a
         {
             Console.WriteLine("Please enter your name.");
 
-            string name = Console.ReadLine();
+            try
+            {
+                string name = Console.ReadLine();
 
-            Console.WriteLine("Hello " + name);
+                greeting(name);
+
+                Console.WriteLine(" ");
+                Console.WriteLine("Press any key to exit the program and try again.");
+                Console.ReadKey(true);
+
+            }
+
+            catch
+            {
+                Console.WriteLine(" ");
+                Console.WriteLine("Please enter your name.");
+                Console.WriteLine(" ");
+                Console.WriteLine("Press any key to exit the program and try again.");
+                Console.ReadKey(true);
+            }
+
+            
         }
+        
+        private static void greeting(string name)
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine("Hello" + name + "!");
+        }
+
     }
 }
